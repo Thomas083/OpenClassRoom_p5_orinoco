@@ -29,7 +29,7 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background: #e1bb80;
+  background: #C26117;
 }
 
 .header-container {
@@ -153,7 +153,7 @@ h1 {
 }
 
 main .products-container {
-  background-color: #e1bb80;
+  background-color: #C26117;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
