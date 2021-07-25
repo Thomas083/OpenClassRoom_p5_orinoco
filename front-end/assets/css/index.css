@@ -106,7 +106,7 @@ h1 {
 }
 
 .teddy-bear__bg {
-  background-image: url("/front-end/src/img/teddy-bear-wallpaper.jpg");
+  background-image: url("../../src/teddy-bear-wallpaper.jpg");
   background-size: cover;
   height: 50vh;
   display: -webkit-box;
@@ -120,7 +120,7 @@ h1 {
 }
 
 .teddy-bear__bg__text-group {
-  color: #dee9f7;
+  color: #B0CA43;
   margin: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
