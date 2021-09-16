@@ -108,6 +108,10 @@ function checkFormAndPostRequest() {
   let inputMail = document.querySelector("#mail");
   let inputPhone = document.querySelector("#phone");
   let erreur = document.querySelector(".erreur");
+  let regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+  let regexCP = /^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/g;
+  let regexPhone = /^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm; 
+
 
   // Lors d'un clic, si l'un des champs n'est pas rempli, on affiche une erreur, on empêche l'envoi du formulaire. On vérifie aussi que le numéro est un nombre, sinon même chose.
   submit.addEventListener("click", (e) => {
@@ -122,9 +126,15 @@ function checkFormAndPostRequest() {
     ) {
       erreur.innerHTML = "Vous devez renseigner tous les champs !";
       e.preventDefault();
-    } else if (isNaN(inputPhone.value)) {
+    } else if (!regexEmail.test(inputMail.value)) {
+      e.preventDefault();
+      erreur.innerText = "Votre adresse mail n'est pas valide";
+    } else if (!regexPhone.test(inputPhone.value)) {
       e.preventDefault();
       erreur.innerText = "Votre numéro de téléphone n'est pas valide";
+    } else if (!regexCP.test(inputPostal.value)) {
+      e.preventDefault();
+      erreur.innerText = "Votre code postale n'est pas valide";
     } else {
 
       // Si le formulaire est valide, le tableau productsBought contiendra un tableau d'objet qui sont les produits acheté, et order contiendra ce tableau ainsi que l'objet qui contient les infos de l'acheteur
@@ -155,7 +165,8 @@ function checkFormAndPostRequest() {
       priceConfirmation = priceConfirmation.split(" :");
 
       // Envoie de la requête avec l'en-tête. On changera de page avec un localStorage qui ne contiendra plus que l'order id et le prix.
-      fetch("http://localhost:3000/api/teddies/order", options)
+      fetch("https://oc-devweb-p5-api.herokuapp.com/api/teddies/order", options)
+      //fetch("http://localhost:3000/api/teddies/order", options)
         .then((response) => response.json())
         .then((data) => {
           localStorage.clear();

@@ -1,12 +1,8 @@
-main();
-
-function main() {
-  getArticles();
-}
-
 // Récupérer les articles depuis l'API
 function getArticles() {
-  fetch("http://localhost:3000/api/teddies")
+  fetch("https://oc-devweb-p5-api.herokuapp.com/api/teddies")
+
+  //fetch("http://localhost:3000/api/teddies")
     .then(function (res) {
       return res.json();
     })
@@ -61,4 +57,9 @@ function getArticles() {
         }).format(resultatAPI[article].price);
       }
     });
+}
+main();
+
+function main() {
+  getArticles();
 }
