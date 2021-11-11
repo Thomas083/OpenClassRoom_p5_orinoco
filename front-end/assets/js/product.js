@@ -34,8 +34,8 @@ function checkIf404() {
 
 function getArticles() {
   // On récupère uniquement le produit dont on a besoin via le paramètre dans la requête
-  fetch(`https://oc-devweb-p5-api.herokuapp.com/api/teddies/${id}`)
-  //fetch(`http://localhost:3000/api/teddies/${id}`)
+  //fetch(`https://oc-devweb-p5-api.herokuapp.com/api/teddies/${id}`)
+  fetch(`http://localhost:3000/api/teddies/${id}`)
     .then(function (response) {
       return response.json();
     })
