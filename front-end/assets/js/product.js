@@ -34,8 +34,8 @@ function checkIf404() {
 
 function getArticles() {
   // On récupère uniquement le produit dont on a besoin via le paramètre dans la requête
-  //fetch(`https://oc-devweb-p5-api.herokuapp.com/api/teddies/${id}`)
-  fetch(`http://localhost:3000/api/teddies/${id}`)
+  fetch(`https://oc-devweb-p5-api.herokuapp.com/api/teddies/${id}`)
+  //fetch(`http://localhost:3000/api/teddies/${id}`)
     .then(function (response) {
       return response.json();
     })
@@ -100,6 +100,10 @@ function addToCart() {
 
       // Effets visuels lors d'un ajout au panier
       confirmation.style.visibility = "visible";
+      textConfirmation.style.background = "green";
+      textConfirmation.style.border = "black";
+      textConfirmation.style.color = "black";
+      textConfirmation.style.whiteSpace = "normal";
       textConfirmation.innerHTML = `Vous avez ajouté ${bearNumber.value} nounours à votre panier !`;
       setTimeout("location.reload(true);", 4000);
     } else {

@@ -120,7 +120,8 @@ h1 {
 }
 
 .teddy-bear__bg__text-group {
-  color: #B0CA43;
+  color: #e26eff;
+  background-color: rgb(6 4 0 / 48%);
   margin: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
