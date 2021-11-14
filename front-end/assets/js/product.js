@@ -85,13 +85,15 @@ function addToCart() {
       };
 
       // ----------------- Gestion du localStorage
-      let arrayProductsInCart = [];
       
+      let arrayProductsInCart = [];
+      //let product = arrayProductsInCart.find(item => item.id === productAdded.id);
       // Si le localStorage existe, on récupère son contenu, on l'insère dans le tableau arrayProductsInCart, puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
       if (localStorage.getItem("products") !== null) {
+        //if (product) {
+        //product.quantity=parseFloat(product.quantity) + productAdded.quantity;
         arrayProductsInCart = JSON.parse(localStorage.getItem("products"));
-        
-        
+        //}
         // Si le LS est vide, on le crée avec le produit ajouté
       } 
         arrayProductsInCart.push(productAdded);
