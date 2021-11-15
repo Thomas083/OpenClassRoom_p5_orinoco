@@ -165,8 +165,8 @@ function checkFormAndPostRequest() {
       priceConfirmation = priceConfirmation.split(" :");
 
       // Envoie de la requête avec l'en-tête. On changera de page avec un localStorage qui ne contiendra plus que l'order id et le prix.
-      fetch("https://oc-devweb-p5-api.herokuapp.com/api/teddies/order", options)
-      //fetch("http://localhost:3000/api/teddies/order", options)
+      //fetch("https://oc-devweb-p5-api.herokuapp.com/api/teddies/order", options)
+      fetch("http://localhost:3000/api/teddies/order", options)
         .then((response) => response.json())
         .then((data) => {
           localStorage.clear();

@@ -167,6 +167,7 @@ h1 {
 
 .container .product-card__infos__quantity {
   margin-bottom: 20px;
+  display: none;
 }
 
 .container .product-card__infos__color {
